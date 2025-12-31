@@ -133,10 +133,10 @@ if (valore2 % 2 === 0) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 let val = 7;
-if (val < 10) {
-  console.log("Meno di 10");
-} else if (val < 5) {
+if (val < 5) {
   console.log("Meno di 5");
+} else if (val < 10) {
+  console.log("Meno di 10");
 } else {
   console.log("Uguale a 10 o maggiore");
 }
@@ -220,8 +220,12 @@ console.log(newArray);*/
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 //Metodo con splice
-newArray.splice(9, 1, 100);
+
+let newArray2 = [...newArray]; // oppure: newArray.slice()
+
+newArray2.splice(9, 1, 100);
+console.log("metodo splice con array originario duplicato", newArray2);
 
 //Metodo con length
-//newArray[newArray.length - 1] = 100;
+newArray[newArray.length - 1] = 100;
 console.log(newArray);
