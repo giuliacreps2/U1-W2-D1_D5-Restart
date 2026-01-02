@@ -212,3 +212,14 @@ console.log(eyeColor);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+
+const animals = ["dog", "cat", "bird", "camel", "horse", "mouse"];
+
+for (i = 0; i < animals.length; i++) {
+  const animalsUpperCase = animals[i].toUpperCase();
+  console.log(animalsUpperCase);
+  //const animal = animals[i];
+  animals.push(animalsUpperCase);
+}
+
+console.log(animals);
