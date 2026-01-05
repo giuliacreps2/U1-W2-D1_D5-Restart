@@ -78,11 +78,19 @@ boundary(50);
   } else {
     return "EPICODE " + str;
   }
+}*/
+
+function epify(str) {
+  if (str.startsWith("EPICODE")) {
+    return str;
+  } else {
+    return "EPICODE " + str;
+  }
 }
 
 console.log(epify("Ciao Mondo"));
 console.log(epify("EPICODE è bello"));
-console.log(epify(5));*/
+//console.log(epify(5));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -108,12 +116,32 @@ check3and7(65);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+//devo cambiare la posizione delle lettere
+//la stringa è un insieme di caratteri, quindi deve essere trattato come un array
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+console.log(reverseString("gelato"));
+
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function upperFirst(str) {
+  const words = str.split(" ");
+  let result = [];
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    let capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1);
+    result.push(capitalizedWord);
+  }
+  return result.join(" ");
+}
+
+console.log(upperFirst("ciao a tutti belli e brutti"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -122,8 +150,26 @@ check3and7(65);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function cutString(str) {
+  return str.slice(1, -1);
+}
+
+console.log(cutString("ciao"));
+console.log(cutString("epicode"));
+
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function giveMeRandom(n) {
+  let array = [];
+  for (let i = 0; i < n; i++) {
+    let random = Math.floor(Math.random() * 11);
+    array.push(random);
+  }
+  return array;
+}
+
+console.log(giveMeRandom(5));
