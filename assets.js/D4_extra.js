@@ -3,23 +3,76 @@
 // ============================================
 
 /* ESERCIZIO 1 - Conta le vocali */
-function contaVocali(str) {
-  // scrivi qui
+/*function contaVocali(str) {
+  // considerare la stringa come un array di lettere
+  // devo fare un ciclo per sapere quante lettere ci sono
+  // devo ritornare il numero di lettere
+ 
+
+  let vowels = ["a", "e", "i", "o", "u"];
+  let consonants = ["b", "c", "d", "f", "g", "h", "l", "m", "n", "p", "q", "r", "s", "t", "v", "z", "j", "k", "w", "x", "y"];
+  console.log(vowels);
+  let words = str.split("");
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    if (word.includes(vowels)) {
+      console.log(str);
+    }
+  }
+}*/
+
+/*const words = str.split(" ");
+  let result = [];
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    result.push(words);
+  }
+  return result;
+}*/
+
+/*function upperFirst(str) {
+  const words = str.split(" ");
+  let result = [];
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    let capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1);
+    result.push(capitalizedWord);
+  }
+  return result.join(" ");
 }
+
 console.log(contaVocali("ciao")); // 3
-console.log(contaVocali("programmazione")); // 6
+console.log(contaVocali("programmazione")); // 6*/
 
 /* ESERCIZIO 2 - Raddoppia numeri */
 function raddoppiaNumeri(arr) {
-  // scrivi qui
+  let risultato = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let number = arr[i];
+    let doppio = number * 2;
+    risultato.push(doppio);
+  }
+
+  return risultato;
 }
-console.log(raddoppiaNumeri([1, 2, 3])); // [2, 4, 6]
-console.log(raddoppiaNumeri([5, 10])); // [10, 20]
+
+console.log(raddoppiaNumeri([1, 2, 3]));
+console.log(raddoppiaNumeri([5, 10]));
 
 /* ESERCIZIO 3 - Iniziali */
 function iniziali(nome, cognome) {
-  // scrivi qui
+  let name = nome[0];
+  let surname = cognome[0];
+
+  let cap = name.toUpperCase();
+  let cap2 = surname.toUpperCase();
+
+  let str = cap + "." + cap2 + ".";
+
+  return str;
 }
+
 console.log(iniziali("mario", "rossi")); // "M.R."
 console.log(iniziali("luca", "bianchi")); // "L.B."
 
