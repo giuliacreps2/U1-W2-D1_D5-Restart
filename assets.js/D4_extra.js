@@ -3,32 +3,13 @@
 // ============================================
 
 /* ESERCIZIO 1 - Conta le vocali */
-/*function contaVocali(str) {
-  // considerare la stringa come un array di lettere
-  // devo fare un ciclo per sapere quante lettere ci sono
-  // devo ritornare il numero di lettere
- 
+//function contaVocali(str) {
+// considerare la stringa come un array di lettere
+// devo fare un ciclo per sapere quante lettere ci sono
+// devo ritornare il numero di lettere
 
-  let vowels = ["a", "e", "i", "o", "u"];
-  let consonants = ["b", "c", "d", "f", "g", "h", "l", "m", "n", "p", "q", "r", "s", "t", "v", "z", "j", "k", "w", "x", "y"];
-  console.log(vowels);
-  let words = str.split("");
-  for (let i = 0; i < words.length; i++) {
-    let word = words[i];
-    if (word.includes(vowels)) {
-      console.log(str);
-    }
-  }
-}*/
-
-/*const words = str.split(" ");
-  let result = [];
-  for (let i = 0; i < words.length; i++) {
-    let word = words[i];
-    result.push(words);
-  }
-  return result;
-}*/
+/*console.log(contaVocali("ciao")); // 3
+console.log(contaVocali("programmazione")); // 6*/
 
 /*function upperFirst(str) {
   const words = str.split(" ");
@@ -39,10 +20,7 @@
     result.push(capitalizedWord);
   }
   return result.join(" ");
-}
-
-console.log(contaVocali("ciao")); // 3
-console.log(contaVocali("programmazione")); // 6*/
+}*/
 
 /* ESERCIZIO 2 - Raddoppia numeri */
 function raddoppiaNumeri(arr) {
@@ -77,17 +55,59 @@ console.log(iniziali("mario", "rossi")); // "M.R."
 console.log(iniziali("luca", "bianchi")); // "L.B."
 
 /* ESERCIZIO 4 - Palindromo */
+
+//metodo 1
 function isPalindromo(str) {
-  // scrivi qui
+  for (let i = 0; i < str.length; i++) {
+    // ← length, non lenght!
+    let letterSinistra = str[i];
+    let letterDestra = str[str.length - 1 - i]; // ← Formula per andare indietro
+
+    if (letterSinistra !== letterDestra) {
+      return false;
+    }
+  }
+
+  return true;
 }
+
+console.log(isPalindromo("anna")); // true
+console.log(isPalindromo("radar")); // true
+console.log(isPalindromo("ciao")); // false
+
+//metodo 2
+
+function isPalindromo2(str) {
+  let invertita = str.split("").reverse().join("");
+
+  if (str === invertita) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 console.log(isPalindromo("anna")); // true
 console.log(isPalindromo("radar")); // true
 console.log(isPalindromo("ciao")); // false
 
 /* ESERCIZIO 5 - Rimuovi duplicati */
+
 function rimuoviDuplicati(arr) {
-  // scrivi qui
+  let newArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let element = arr[i];
+
+    if (newArray.includes(element)) {
+    } else {
+      newArray.push(element);
+    }
+  }
+
+  return newArray;
 }
+
 console.log(rimuoviDuplicati([1, 2, 2, 3, 3, 3, 4])); // [1, 2, 3, 4]
 console.log(rimuoviDuplicati(["a", "b", "a", "c"])); // ["a", "b", "c"]
 

@@ -88,3 +88,34 @@ for (let i = 0; i < letters.length; i++) {
   }
   // return capstone;
 }*/
+
+/* ESERCIZIO 4 - Palindromo */
+/*function isPalindromo(str) {
+  let palindromo = true;
+
+  for (let i = 0; i < str.length; i++) {
+    let letterDx = str[i];
+    console.log(letterDx);
+  }
+  for (let i = 0; i < str.length; i--) {
+    let letterSx = str[i];
+  }
+  if (letterDx === letterSX) {
+  }
+  return palindromo;
+}*/
+
+/* ESERCIZIO 5 - Rimuovi duplicati */
+/*function rimuoviDuplicati(arr) {
+  let newArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let element = arr[i];
+    console.log(arr);
+  }
+  if (elemento === elemento2) {
+    return newArray.slice();
+  } else {
+    return newArray.push(arr);
+  }
+}*/
