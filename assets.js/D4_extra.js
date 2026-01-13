@@ -120,22 +120,32 @@ console.log(censura("il gatto è bello", "gatto")); // "il ***** è bello"
 
 /* ESERCIZIO 7 - Ordina per lunghezza */
 function ordinaPerLunghezza(arr) {
-  // scrivi qui
+  return arr.sort(function (a, b) {
+    return a.length - b.length;
+  });
 }
 console.log(ordinaPerLunghezza(["ciao", "a", "mondo", "ok"])); // ["a", "ok", "ciao", "mondo"]
 
-/* ESERCIZIO 8 - Conta parole */
+/* ESERCIZIO 8 - Conta parole 
 function contaParole(frase) {
-  // scrivi qui
+  let arr = frase.split(" ");
+  console.log(arr);
+
+  arr.filter(function (element) {
+    return ${expression} ;
+  });
 }
-console.log(contaParole("ciao ciao mondo")); // {ciao: 2, mondo: 1}
+console.log(contaParole("ciao ciao mondo")); // {ciao: 2, mondo: 1}*/
 
 /* ESERCIZIO 9 - Alterna maiuscole/minuscole */
-function alternaCase(str) {
-  // scrivi qui
+/*function alternaCase(str) {
+  let letter = str.split("");
+
+  let cap = letter.toUpperCase();
+  console.log(cap);
 }
 console.log(alternaCase("ciao")); // "CiAo"
-console.log(alternaCase("javascript")); // "JaVaScRiPt"
+console.log(alternaCase("javascript")); // "JaVaScRiPt"*/
 
 /* ESERCIZIO 10 - FizzBuzz array */
 function fizzBuzzArray(n) {
@@ -145,8 +155,15 @@ console.log(fizzBuzzArray(15));
 // [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]
 
 /* ESERCIZIO 11 - Somma array */
+let sum = 0;
+
 function sommaArray(arr) {
-  // scrivi qui
+  for (let i = 0; i < arr.length; i++) {
+    let numbers = arr[i];
+    sum += numbers;
+  }
+
+  return sum;
 }
 console.log(sommaArray([1, 2, 3, 4])); // 10
 console.log(sommaArray([10, 20, 30])); // 60
@@ -159,8 +176,9 @@ console.log(parolaPiuLunga(["gatto", "cane", "elefante", "topo"])); // "elefante
 
 /* ESERCIZIO 13 - Ripeti carattere */
 function ripeti(str, n) {
-  // scrivi qui
+  return str.repeat(n);
 }
+
 console.log(ripeti("a", 5)); // "aaaaa"
 console.log(ripeti("ciao", 3)); // "ciaociaociao"
 
@@ -180,7 +198,13 @@ console.log(rimuoviSpazi("hello world test")); // "helloworldtest"
 
 /* ESERCIZIO 16 - Media array */
 function mediaArray(arr) {
-  // scrivi qui
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let numbers = arr[i];
+    sum += numbers;
+  }
+  return (media = sum / arr.length);
 }
 console.log(mediaArray([10, 20, 30])); // 20
 console.log(mediaArray([5, 10, 15, 20])); // 12.5
@@ -200,15 +224,28 @@ console.log(caratterePiuFrequente("hello")); // "l"
 console.log(caratterePiuFrequente("javascript")); // "a"
 
 /* ESERCIZIO 19 - Array di quadrati */
-function arrayQuadrati(n) {
-  // scrivi qui
-}
+function arrayQuadrati(n) {}
+
 console.log(arrayQuadrati(5)); // [1, 4, 9, 16, 25]
 console.log(arrayQuadrati(3)); // [1, 4, 9]
 
 /* ESERCIZIO 20 - Sostituisci carattere */
 function sostituisci(str, vecchio, nuovo) {
-  // scrivi qui
+  let newArray = str.split("");
+
+  for (let i = 0; i < newArray.length; i++) {
+    let letter = newArray[i];
+    if (letter === vecchio) {
+      newArray[i] = nuovo;
+    }
+  }
+  return (str = newArray.join(""));
 }
+
+//versione alternativa//
+/*function sostituisci(str, vecchio, nuovo) {
+  return str.replaceAll(vecchio, nuovo);
+}*/
+
 console.log(sostituisci("hello world", "o", "0")); // "hell0 w0rld"
 console.log(sostituisci("banana", "a", "o")); // "bonono"
